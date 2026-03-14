@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#fff4ea"/>
+  <polygon points="0,0 250,0 160,360 0,360" fill="#ff8b3d"/>
+  <rect x="182" y="34" width="424" height="292" rx="28" fill="#1b2437"/>
+  <text x="212" y="126" fill="#ffffff" font-size="36" font-family="Arial, sans-serif" font-weight="700">検証してみた</text>
+  <text x="212" y="198" fill="#ffd164" font-size="64" font-family="Arial, sans-serif" font-weight="700">本当に使える？</text>
+  <text x="212" y="272" fill="#c8d1e0" font-size="22" font-family="Arial, sans-serif">Entertainment Thumbnail Sample</text>
+</svg>

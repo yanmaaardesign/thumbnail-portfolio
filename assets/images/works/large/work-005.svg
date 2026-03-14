@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f4f8fc"/>
+  <rect x="46" y="46" width="1108" height="583" rx="40" fill="#ffffff" stroke="#d7e0ef" stroke-width="4"/>
+  <circle cx="246" cy="338" r="154" fill="#163b72"/>
+  <rect x="466" y="146" width="584" height="98" rx="24" fill="#163b72"/>
+  <rect x="466" y="272" width="498" height="84" rx="24" fill="#eef2f8"/>
+  <rect x="466" y="384" width="416" height="84" rx="24" fill="#eef2f8"/>
+  <text x="514" y="210" fill="#ffffff" font-size="64" font-family="Arial, sans-serif" font-weight="700">買うべき？</text>
+  <text x="514" y="328" fill="#163b72" font-size="52" font-family="Arial, sans-serif" font-weight="700">レビュー解説</text>
+</svg>

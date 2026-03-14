@@ -1,0 +1,27 @@
+.l-section {
+  padding: 0 0 88px;
+}
+
+.l-section__inner {
+  width: min(calc(100% - 32px), var(--container-width));
+  margin: 0 auto;
+}
+
+.l-section__heading {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.l-section__lead {
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.l-section__title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.2;
+}

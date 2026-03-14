@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(180deg, var(--color-bg) 0%, #ffffff 100%);
+  color: var(--color-text);
+  font-family: var(--font-base);
+  line-height: 1.7;
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(180deg, #0f1520 0%, #121b2a 100%);
+}
+
+main {
+  min-height: 100vh;
+}
+
+a,
+button {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base), opacity var(--transition-base);
+}
+
+a:hover,
+button:hover {
+  opacity: 0.92;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}

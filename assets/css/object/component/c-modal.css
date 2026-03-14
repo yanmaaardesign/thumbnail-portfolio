@@ -1,0 +1,42 @@
+.c-modal[hidden] {
+  display: none;
+}
+
+.c-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.c-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 12, 20, 0.7);
+}
+
+.c-modal__dialog {
+  position: relative;
+  width: min(calc(100% - 24px), 960px);
+  max-height: calc(100vh - 48px);
+  margin: 24px auto;
+  overflow: auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 30px 80px var(--color-shadow);
+}
+
+.c-modal__close {
+  position: sticky;
+  top: 16px;
+  left: calc(100% - 56px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  z-index: 1;
+}
+
+.c-modal__body {
+  padding: 8px 24px 24px;
+}

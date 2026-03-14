@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f3f6fb"/>
+  <rect x="46" y="46" width="1108" height="583" rx="40" fill="#ffffff" stroke="#d7e0ef" stroke-width="4"/>
+  <rect x="84" y="84" width="418" height="507" rx="32" fill="#163b72"/>
+  <rect x="534" y="84" width="580" height="507" rx="32" fill="#eef2f8"/>
+  <text x="578" y="232" fill="#163b72" font-size="64" font-family="Arial, sans-serif" font-weight="700">プロが語る</text>
+  <text x="578" y="336" fill="#162033" font-size="94" font-family="Arial, sans-serif" font-weight="700">対談の裏側</text>
+  <text x="578" y="470" fill="#5f6b80" font-size="42" font-family="Arial, sans-serif">Talk Thumbnail Sample</text>
+</svg>

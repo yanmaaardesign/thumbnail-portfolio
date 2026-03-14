@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#ecf2fb"/>
+  <rect x="52" y="52" width="1096" height="571" rx="40" fill="#163b72"/>
+  <circle cx="968" cy="246" r="118" fill="#f0c94b"/>
+  <text x="110" y="212" fill="#ffffff" font-size="80" font-family="Arial, sans-serif" font-weight="700">売上を伸ばす</text>
+  <text x="110" y="324" fill="#ffffff" font-size="110" font-family="Arial, sans-serif" font-weight="700">3つの視点</text>
+  <text x="110" y="470" fill="#dfe9f7" font-size="42" font-family="Arial, sans-serif">Business Thumbnail Sample</text>
+</svg>

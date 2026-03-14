@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#eef3fa"/>
+  <rect x="52" y="52" width="1096" height="571" rx="40" fill="#ffffff"/>
+  <rect x="96" y="94" width="1008" height="168" rx="28" fill="#163b72"/>
+  <rect x="96" y="302" width="480" height="240" rx="24" fill="#dfe9f7"/>
+  <rect x="620" y="302" width="484" height="240" rx="24" fill="#eef2f8"/>
+  <text x="142" y="200" fill="#ffffff" font-size="76" font-family="Arial, sans-serif" font-weight="700">初心者向け完全解説</text>
+  <text x="664" y="420" fill="#163b72" font-size="54" font-family="Arial, sans-serif" font-weight="700">POINT</text>
+</svg>

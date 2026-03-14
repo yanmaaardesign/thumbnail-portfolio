@@ -1,0 +1,25 @@
+@import url("./foundation/variables.css");
+@import url("./foundation/reset.css");
+@import url("./foundation/base.css");
+@import url("./layout/l-header.css");
+@import url("./layout/l-footer.css");
+@import url("./layout/l-section.css");
+@import url("./object/component/c-button.css");
+@import url("./object/component/c-card.css");
+@import url("./object/component/c-tag.css");
+@import url("./object/component/c-modal.css");
+@import url("./object/component/c-carousel.css");
+@import url("./object/project/p-works.css");
+@import url("./object/project/p-price.css");
+@import url("./object/project/p-contact.css");
+@import url("./object/utility/u-display.css");
+@import url("./object/utility/u-spacing.css");
+
+.c-theme-toggle {
+  min-width: 72px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}

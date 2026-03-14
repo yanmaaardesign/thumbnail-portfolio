@@ -1,0 +1,92 @@
+[
+  {
+    "id": "work-001",
+    "title": "ビジネス系YouTubeサムネイル",
+    "slug": "business-thumb-01",
+    "category": "thumbnail",
+    "featured": true,
+    "tags": ["ビジネス", "YouTube", "高視認性"],
+    "thumbnail": "../assets/images/works/thumb/work-001.svg",
+    "imageLarge": "../assets/images/works/large/work-001.svg",
+    "description": "堅めのテーマでも目を引くよう、情報の優先順位を明確にしたビジネス系サムネイル。",
+    "detail": {
+      "productionTime": "約2時間",
+      "persona": "20代後半から40代のビジネス層",
+      "purpose": "CTR向上と専門性の訴求",
+      "designPoint": "タイトルの可読性を最優先し、ネイビーとイエローでコントラストを設計",
+      "tools": ["Photoshop", "Figma"]
+    }
+  },
+  {
+    "id": "work-002",
+    "title": "対談動画向けサムネイル",
+    "slug": "talk-thumb-02",
+    "category": "thumbnail",
+    "featured": true,
+    "tags": ["対談", "情報発信", "人物訴求"],
+    "thumbnail": "../assets/images/works/thumb/work-002.svg",
+    "imageLarge": "../assets/images/works/large/work-002.svg",
+    "description": "出演者の表情を軸に、内容がすぐ伝わる見出しと余白設計で整理したサムネイル。",
+    "detail": {
+      "productionTime": "約2.5時間",
+      "persona": "ビジネス系YouTubeの視聴者",
+      "purpose": "出演者への興味喚起と動画テーマの理解促進",
+      "designPoint": "顔の視線誘導と見出しサイズ差でクリック導線を強化",
+      "tools": ["Photoshop"]
+    }
+  },
+  {
+    "id": "work-003",
+    "title": "エンタメ企画用サムネイル",
+    "slug": "entertainment-thumb-03",
+    "category": "thumbnail",
+    "featured": true,
+    "tags": ["エンタメ", "企画", "強調文字"],
+    "thumbnail": "../assets/images/works/thumb/work-003.svg",
+    "imageLarge": "../assets/images/works/large/work-003.svg",
+    "description": "感情が伝わる写真配置と大きな見出しで、勢いを演出したエンタメ企画向けの一枚。",
+    "detail": {
+      "productionTime": "約1.5時間",
+      "persona": "10代後半から30代前半の幅広い視聴者",
+      "purpose": "企画のインパクトを瞬時に伝える",
+      "designPoint": "色数を絞りつつ装飾を足して、騒がしすぎず強い印象に調整",
+      "tools": ["Photoshop", "Illustrator"]
+    }
+  },
+  {
+    "id": "work-004",
+    "title": "解説系サムネイル",
+    "slug": "explanatory-thumb-04",
+    "category": "thumbnail",
+    "featured": true,
+    "tags": ["解説", "教育", "整理感"],
+    "thumbnail": "../assets/images/works/thumb/work-004.svg",
+    "imageLarge": "../assets/images/works/large/work-004.svg",
+    "description": "情報量が多いテーマでも、整理されて見えるレイアウトで信頼感を持たせたデザイン。",
+    "detail": {
+      "productionTime": "約2時間",
+      "persona": "学習目的で動画を見る視聴者",
+      "purpose": "内容理解のしやすさと視認性の両立",
+      "designPoint": "テキストブロックの階層分けで読みやすさを担保",
+      "tools": ["Figma", "Photoshop"]
+    }
+  },
+  {
+    "id": "work-005",
+    "title": "商品レビュー向けサムネイル",
+    "slug": "review-thumb-05",
+    "category": "thumbnail",
+    "featured": true,
+    "tags": ["レビュー", "商品訴求", "比較"],
+    "thumbnail": "../assets/images/works/thumb/work-005.svg",
+    "imageLarge": "../assets/images/works/large/work-005.svg",
+    "description": "商品写真の魅力を活かしつつ、比較ポイントが伝わるように構成したレビュー向けサムネイル。",
+    "detail": {
+      "productionTime": "約2時間",
+      "persona": "購入検討中のユーザー",
+      "purpose": "比較ポイントの明示とクリック動機の形成",
+      "designPoint": "商品ビジュアルを主役にしながら、評価軸を補助的に配置",
+      "tools": ["Photoshop"]
+    }
+  }
+]

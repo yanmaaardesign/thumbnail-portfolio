@@ -1,0 +1,20 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.c-button--primary {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.c-button--ghost {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
