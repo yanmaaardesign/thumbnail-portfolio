@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yanmaaardesign-beep.github.io/thumbnail-portfolio/sitemap.xml
+Sitemap: https://yanmaaardesign.github.io/thumbnail-portfolio/sitemap.xml
