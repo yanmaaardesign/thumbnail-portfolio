@@ -7,7 +7,7 @@
 `fetch()` でJSONを読むため、`file://` 直開きでは動きません。ローカルサーバーで確認してください。
 
 ```bash
-cd /Users/masa/Desktop/Codex/thumbnail-portfolio-site
+cd thumbnail-portfolio-site
 python3 -m http.server 8000
 ```
 
@@ -23,7 +23,7 @@ python3 -m http.server 8000
 コマンド例:
 
 ```bash
-cd /Users/masa/Desktop/Codex/thumbnail-portfolio-site
+cd thumbnail-portfolio-site
 git remote add origin <YOUR_GITHUB_REPO_URL>
 git push -u origin main
 ```
@@ -58,7 +58,7 @@ git push -u origin main
 更新時は以下で十分です。
 
 ```bash
-cd /Users/masa/Desktop/Codex/thumbnail-portfolio-site
+cd thumbnail-portfolio-site
 git status
 git add .
 git commit -m "作品追加や文言更新の内容"
