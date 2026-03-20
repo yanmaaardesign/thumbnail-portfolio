@@ -12,8 +12,6 @@
 @import url("./object/project/p-works.css");
 @import url("./object/project/p-price.css");
 @import url("./object/project/p-contact.css");
-@import url("./object/utility/u-display.css");
-@import url("./object/utility/u-spacing.css");
 @import url("./object/utility/u-animation.css");
 
 .c-theme-toggle {

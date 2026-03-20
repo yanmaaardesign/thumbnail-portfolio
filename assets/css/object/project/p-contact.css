@@ -1,11 +1,8 @@
+/* Contact */
 .p-contact__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-}
-
-.c-contact-card__text + .c-button {
-  margin-top: 20px;
 }
 
 .p-contact__guide {
@@ -13,6 +10,11 @@
   padding: 0;
 }
 
+.c-contact-card__text + .c-button {
+  margin-top: 20px;
+}
+
+/* Work detail */
 .p-work-detail__layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
@@ -20,37 +22,12 @@
 }
 
 .p-work-detail__visual {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 18px 40px var(--color-shadow);
-}
-
-.p-work-detail__content,
-.p-work-detail__aside {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 18px 40px var(--color-shadow);
-}
-
-.p-work-detail__visual {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-}
-
-.p-work-detail__visual::after {
-  content: "SAMPLE";
-  position: absolute;
-  inset: 50% auto auto 50%;
-  z-index: 1;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(32px, 4vw, 50px);
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.24);
-  transform: translate(-50%, -50%) rotate(-18deg);
-  pointer-events: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: 0 18px 40px var(--color-shadow);
 }
 
 .p-work-detail__visual img {
@@ -62,8 +39,16 @@
   -webkit-touch-callout: none;
 }
 
+.p-work-detail__content,
+.p-work-detail__aside {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: 0 18px 40px var(--color-shadow);
+}
+
 .p-work-detail__content {
-  margin: 28px 0 0 0;
+  margin: 28px 0 0;
   padding: 28px;
 }
 
@@ -119,14 +104,6 @@
   border-top: 12px solid #e0edff;
 }
 
-[data-theme="dark"] .p-work-detail__aside h2::before {
-  border-top-color: #2a3d5f;
-}
-
-[data-theme="dark"] .p-work-detail__aside h2 {
-  background: #2a3d5f;
-}
-
 .p-work-detail__aside p {
   margin-top: 12px;
   margin-bottom: 20px;
@@ -135,12 +112,20 @@
 
 .p-work-detail__empty {
   display: grid;
-  gap: 16px;
   justify-items: center;
+  gap: 16px;
   padding: 64px 24px;
-  text-align: center;
-  border-radius: var(--radius-lg);
   border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+[data-theme="dark"] .p-work-detail__aside h2 {
+  background: #2a3d5f;
+}
+
+[data-theme="dark"] .p-work-detail__aside h2::before {
+  border-top-color: #2a3d5f;
 }
 
 @media (max-width: 1023px) {

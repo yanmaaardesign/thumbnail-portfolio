@@ -29,7 +29,6 @@ Works should move from a flat `tags` array to explicit fields.
 - `source_type`
   - `self_made`
   - `trace`
-- `is_eye_candy`
 - `genres`
   - `business`
   - `cooking`
@@ -44,8 +43,7 @@ Works should move from a flat `tags` array to explicit fields.
 - Carousel: `featured = true` and `status = published`
 - Works list: all `published` works
 - Filter 1: source type
-- Filter 2: eye candy flag
-- Filter 3: genre
+- Filter 2: genre
 
 ## Rollout plan
 

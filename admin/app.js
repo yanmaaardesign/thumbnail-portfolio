@@ -7,7 +7,6 @@ const sampleWorks = [
     title: "ビジネス系YouTubeサムネイル",
     status: "published",
     source_type: "self_made",
-    is_eye_candy: false,
     genre: "business",
     genreLabel: "ビジネス",
     thumbnail_image_url: "../assets/images/works/thumb/work-001.svg"
@@ -17,7 +16,6 @@ const sampleWorks = [
     title: "料理系レシピサムネイル",
     status: "draft",
     source_type: "trace",
-    is_eye_candy: true,
     genre: "cooking",
     genreLabel: "料理",
     thumbnail_image_url: "../assets/images/works/thumb/work-005.svg"
@@ -152,7 +150,6 @@ async function loadWorks() {
       tools,
       status,
       source_type,
-      is_eye_candy,
       featured,
       sort_order,
       created_at,

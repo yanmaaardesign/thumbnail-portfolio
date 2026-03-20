@@ -43,6 +43,8 @@ create or replace function public.is_admin_user()
 returns boolean
 language sql
 stable
+security definer
+set search_path = public
 as $$
   select exists (
     select 1
@@ -50,6 +52,9 @@ as $$
     where id = auth.uid()
   );
 $$;
+
+revoke all on function public.is_admin_user() from public;
+grant execute on function public.is_admin_user() to anon, authenticated;
 
 alter table public.admin_users enable row level security;
 alter table public.genres enable row level security;
