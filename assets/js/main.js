@@ -1,6 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { publicConfig } from "./public-config.js";
 
+/* ページ階層に応じた相対パスと、画面全体で使う状態を管理 */
 const pathDepth = window.location.pathname.includes("/works/") || window.location.pathname.includes("/price/") || window.location.pathname.includes("/contact/") ? ".." : ".";
 
 const state = {
@@ -31,6 +32,7 @@ const selectors = {
 const dataUrl = `${pathDepth}/${publicConfig.fallbackWorksUrl}`;
 const supabase = createPublicClient();
 
+/* 初期表示時にテーマ・共通イベント・作品データ読込をまとめて実行 */
 document.addEventListener("DOMContentLoaded", async () => {
   initTheme();
   bindGlobalEvents();
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+/* 作品データは Supabase を優先し、取れない場合だけ JSON にフォールバック */
 async function loadWorks() {
   const supabaseWorks = await loadWorksFromSupabase();
 
@@ -63,6 +66,7 @@ async function loadWorks() {
   return loadWorksFromJson();
 }
 
+/* 公開画面用の Supabase クライアントを初期化 */
 function createPublicClient() {
   if (!publicConfig.supabaseUrl || !publicConfig.supabaseAnonKey) {
     return null;
@@ -71,6 +75,7 @@ function createPublicClient() {
   return createClient(publicConfig.supabaseUrl, publicConfig.supabaseAnonKey);
 }
 
+/* 公開中作品を Supabase から取得して、表示用の形へ整える */
 async function loadWorksFromSupabase() {
   if (!supabase) {
     return [];
@@ -112,6 +117,7 @@ async function loadWorksFromSupabase() {
   return (data || []).map(mapSupabaseWorkToPublicWork);
 }
 
+/* ローカル JSON を従来形式のまま読み込む */
 async function loadWorksFromJson() {
   const response = await fetch(dataUrl);
   if (!response.ok) {
@@ -128,6 +134,7 @@ async function loadWorksFromJson() {
   }));
 }
 
+/* Supabase の作品データを公開画面で使う共通形式へ変換 */
 function mapSupabaseWorkToPublicWork(work) {
   const genreLabels = (work.work_genres || [])
     .map((entry) => entry.genres?.label)
@@ -158,6 +165,7 @@ function mapSupabaseWorkToPublicWork(work) {
   };
 }
 
+/* 制作種別とジャンルから公開画面用タグを組み立てる */
 function buildPublicTags(work, genreLabels) {
   const tags = [];
 
@@ -172,6 +180,7 @@ function buildPublicTags(work, genreLabels) {
   return [...new Set(tags)];
 }
 
+/* 画像パスがローカル相対パスでも動くよう補正 */
 function resolveAssetPath(path) {
   if (path.startsWith("http")) {
     return path;
@@ -181,10 +190,12 @@ function resolveAssetPath(path) {
   return `${pathDepth}/${normalized}`;
 }
 
+/* カルーセル表示用にピックアップ作品だけ最大5件取り出す */
 function getFeaturedWorks(works) {
   return works.filter((work) => work.featured).slice(0, 5);
 }
 
+/* 制作種別・ジャンルの絞り込み UI を描画 */
 function renderFilters(works) {
   if (!selectors.filterGroup) {
     return;
@@ -224,6 +235,7 @@ function renderFilters(works) {
   });
 }
 
+/* フィルターグループ1つ分のHTMLを返す */
 function renderFilterSection(label, groupKey, options) {
   return `
     <section class="p-works__filter-group" aria-label="${label}">
@@ -238,6 +250,7 @@ function renderFilterSection(label, groupKey, options) {
   `;
 }
 
+/* 作品一覧カードを描画し、モーダル表示イベントを結びつける */
 function renderWorks(works) {
   if (!selectors.worksGrid) {
     return;
@@ -275,6 +288,7 @@ function renderWorks(works) {
   });
 }
 
+/* 現在の絞り込み条件に作品が一致するかを判定 */
 function matchesFilters(work) {
   const sourceTypeMatches = state.filters.sourceType === "all" || work.sourceType === state.filters.sourceType;
   const genreMatches = state.filters.genre === "all" || (work.genres || []).includes(state.filters.genre);
@@ -282,6 +296,7 @@ function matchesFilters(work) {
   return sourceTypeMatches && genreMatches;
 }
 
+/* ピックアップ作品のカルーセルを描画 */
 function renderCarousel(works) {
   if (!selectors.carouselTrack || !works.length) {
     return;
@@ -342,6 +357,7 @@ function renderCarousel(works) {
   initCarouselSwipe(works);
 }
 
+/* 現在のインデックスに合わせてカルーセル位置とドット状態を更新 */
 function updateCarousel() {
   if (!selectors.carouselTrack) {
     return;
@@ -353,6 +369,7 @@ function updateCarousel() {
   });
 }
 
+/* SP のスワイプ操作でカルーセルを送れるようにする */
 function initCarouselSwipe(works) {
   const viewport = document.querySelector(".c-carousel__viewport");
 
@@ -385,6 +402,7 @@ function initCarouselSwipe(works) {
   });
 }
 
+/* 作品一覧・カルーセルから開くモーダル詳細を描画 */
 function openModal(work) {
   if (!selectors.modal || !selectors.modalBody) {
     return;
@@ -430,6 +448,7 @@ function openModal(work) {
   });
 }
 
+/* モーダルを閉じてスクロール制御を戻す */
 function closeModal() {
   if (!selectors.modal) {
     return;
@@ -439,6 +458,7 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
+/* モーダル・右クリック抑止・ドラッグ抑止など共通イベントを登録 */
 function bindGlobalEvents() {
   document.querySelectorAll("[data-modal-close]").forEach((element) => {
     element.addEventListener("click", closeModal);
@@ -463,6 +483,7 @@ function bindGlobalEvents() {
   });
 }
 
+/* 公開画像かどうかを判定して、右クリック保存などを軽く抑止 */
 function isProtectedImageTarget(target) {
   if (!(target instanceof Element)) {
     return false;
@@ -471,6 +492,7 @@ function isProtectedImageTarget(target) {
   return Boolean(target.closest(".c-card__thumb, .c-carousel__image, .p-modal-work__media, .p-work-detail__visual"));
 }
 
+/* 個別作品ページ用の本文・相談導線を描画 */
 function renderDetailPage(works) {
   const slug = new URLSearchParams(window.location.search).get("slug");
   const work = works.find((item) => item.slug === slug);
@@ -516,11 +538,11 @@ function renderDetailPage(works) {
           </div>
           <aside class="p-work-detail__aside">
             <h2>この作品から相談する</h2>
-            <p>このテイストに近いサムネイルをご依頼いただける場合は、Xまたはメールからご相談可能です。参考作品として作品名やURLをご共有いただけるとスムーズです。</p>
+            <p>このテイストに近いサムネイルをご依頼いただける場合は、Xまたはメールからご相談可能です。<br>参考作品として作品名やURLをご共有いただけるとスムーズです。</p>
             <div class="p-work-detail__actions">
               <a class="c-button c-button--primary" href="../contact/">お問い合わせページへ</a>
-              <a class="c-button c-button--ghost" href="https://x.com/yanmardesign" target="_blank" rel="noreferrer">Xで相談</a>
-              <a class="c-button c-button--ghost" href="mailto:yanmaaardesign@gmail.com?subject=${encodeURIComponent(`【制作相談】${work.title}`)}">メールで相談</a>
+              <a class="c-button c-button--ghost" href="https://x.com/yanmardesign" target="_blank" rel="noreferrer">Xでご相談</a>
+              <a class="c-button c-button--ghost" href="mailto:yanmaaardesign@gmail.com?subject=${encodeURIComponent(`【制作相談】${work.title}`)}">メールでご相談</a>
             </div>
           </aside>
         </div>
@@ -529,6 +551,7 @@ function renderDetailPage(works) {
   }
 }
 
+/* 未入力項目を除きつつ、詳細表示用の項目一覧を作る */
 function buildDetailItems(work) {
   const items = [
     { label: "制作時間", value: work.detail.productionTime },
@@ -547,6 +570,7 @@ function buildDetailItems(work) {
   return items;
 }
 
+/* ライト / ダークテーマの初期反映と切り替え処理 */
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", savedTheme);
@@ -561,6 +585,7 @@ function initTheme() {
   });
 }
 
+/* テーマ切り替えボタンの文言を更新 */
 function updateThemeButton(theme) {
   const label = selectors.themeToggle?.querySelector(".c-theme-toggle__label");
   if (label) {
@@ -568,8 +593,10 @@ function updateThemeButton(theme) {
   }
 }
 
+/* スクロール時のフェード表示を初期化 */
 initScrollReveal();
 
+/* 画面に入ったセクションだけ順に表示する */
 function initScrollReveal() {
   const targets = document.querySelectorAll(".js-scroll-fade");
 
