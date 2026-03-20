@@ -541,8 +541,6 @@ function renderDetailPage(works) {
             <p>このテイストに近いサムネイルをご依頼いただける場合は、Xまたはメールからご相談可能です。<br>参考作品として作品名やURLをご共有いただけるとスムーズです。</p>
             <div class="p-work-detail__actions">
               <a class="c-button c-button--primary" href="../contact/">お問い合わせページへ</a>
-              <a class="c-button c-button--ghost" href="https://x.com/yanmardesign" target="_blank" rel="noreferrer">Xでご相談</a>
-              <a class="c-button c-button--ghost" href="mailto:yanmaaardesign@gmail.com?subject=${encodeURIComponent(`【制作相談】${work.title}`)}">メールでご相談</a>
             </div>
           </aside>
         </div>
